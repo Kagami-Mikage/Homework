@@ -1,48 +1,19 @@
-#
-# Homework #2: Pickleball Madness
-#
-# 1.	You know that you've got to go back to school, so you want to 
-# create a solution that your Aunt Mary can use long after you are gone. 
-# You have decided that you are going to write a Python program that she 
-# can use to get the answers that she needs about how her store is doing.
-#
-# 2.	Using Python and SQLite, you will create a Python program that 
-# will create a database with the appropriate four tables that Aunt Mary 
-# will need to store information about her store.
-#
-# 3.	You will then load these tables with the information that is 
-# provided.
-#
-# 4.	You will then use your Python program to answer the following 
-# questions:
-# a.	What customers (first name, last name, address, city, state, zip 
-# code) purchased Pickleball products?
-#
-# b.	Of the customers in Aunt Mary’s database, which ones have made a 
-# purchase?
-#
-# c.	Of the products in Aunt Mary’s inventory, what products have been 
-# sold?
-#
-# d.	How much money did Aunt Mary make selling Pickleball products?
-#
-# e.	How much money did Aunt Mary make selling Tennis products?
-#
-# f.	How much money did Aunt Mary make on her first sale?
-# g.	How much money did Aunt Mary make on her last sale?
-# h.	Create a result that shows each customer’s (first name, last name, 
-# state) who has made a purchase.
-#
-# Student Name:
-# Thurmond Guy
-
 import sqlite3
 
 conn = sqlite3.connect('Pickleball_Madness.db')
 
 c = conn.cursor()
 
-c.execute('''CREATE TABLE IF NOT EXISTS Customer
+drop_customer = '''DROP TABLE IF EXISTS Customer'''
+c.execute(drop_customer)
+drop_product = '''DROP TABLE IF EXISTS Product'''
+c.execute(drop_product)
+drop_purchase = '''DROP TABLE IF EXISTS Purchase'''
+c.execute(drop_purchase)
+drop_sold_item = '''DROP TABLE IF EXISTS Sold_Item'''
+c.execute(drop_sold_item)
+
+c.execute('''CREATE TABLE Customer
                 (customer_id INTEGER PRIMARY KEY,
                 first_name TEXT,
                 last_name TEXT,
@@ -53,7 +24,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS Customer
                 phone_number TEXT
                 )''')
 
-c.execute('''CREATE TABLE IF NOT EXISTS Product
+c.execute('''CREATE TABLE Product
                 (product_id INTEGER PRIMARY KEY,
                 product_name TEXT,
                 description TEXT,
@@ -62,7 +33,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS Product
                 vendor_name TEXT
                 )''')
 
-c.execute('''CREATE TABLE IF NOT EXISTS Purchase
+c.execute('''CREATE TABLE Purchase
                 (invoice_no INTEGER PRIMARY KEY,
                 customer_id INTEGER,
                 invoice_date TEXT,
@@ -72,7 +43,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS Purchase
                 FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
                 )''')
 
-c.execute('''CREATE TABLE IF NOT EXISTS Sold_Item
+c.execute('''CREATE TABLE Sold_Item
                 (line_no INTEGER PRIMARY KEY,
                 invoice_no INTEGER,
                 product_id INTEGER,
@@ -155,14 +126,15 @@ print('\nCustomers who have made a purchase:')
 for row in c.fetchall():
     print(row)
 
-c.execute('''SELECT Product.product_id, Product.product_name, Product.description, Product.category
+c.execute('''SELECT DISTINCT Product.product_name
                 FROM Product
                 JOIN Sold_Item ON Product.product_id = Sold_Item.product_id
                 ''')
 
 print('\nProducts that have been sold:')
 for row in c.fetchall():
-    print(row)
+    print(row[0])
+
 
 c.execute('''SELECT SUM(Sold_Item.quantity * Sold_Item.price)
                 FROM Sold_Item
@@ -174,7 +146,6 @@ print('\nMoney made from Pickleball products:')
 for row in c.fetchall():
     total_money = (row[0])
     print(f"${total_money:.2f}")
-
 
 c.execute('''SELECT SUM(Sold_Item.quantity * Sold_Item.price)
                 FROM Sold_Item
@@ -193,10 +164,18 @@ c.execute('''SELECT SUM(Sold_Item.quantity * Sold_Item.price)
                 WHERE Purchase.invoice_no = 1
                 ''')
 
+#I wasn't sure if u want the total_paid from the Purchase table or just the total money made from the amount of items sold for the purchase. I did both just in case, I'm assuming the difference between the values is the tax.
 print('\nMoney made from Aunt Mary\'s first sale:')
 for row in c.fetchall():
     total_money = (row[0])
-    print(f"${total_money:.2f}")
+
+c.execute('''SELECT Purchase.total_paid
+                FROM Purchase
+                WHERE Purchase.invoice_no = 1
+                ''')
+for row in c.fetchall():
+    total_paid = (row[0])
+    print(f"${total_money:.2f}\nWith tax:\n${total_paid:.2f}")
 
 c.execute('''SELECT SUM(Sold_Item.quantity * Sold_Item.price)
                 FROM Sold_Item
@@ -207,7 +186,14 @@ c.execute('''SELECT SUM(Sold_Item.quantity * Sold_Item.price)
 print('\nMoney made from Aunt Mary\'s last sale:')
 for row in c.fetchall():
     total_money = (row[0])
-    print(f"${total_money:.2f}")
+
+c.execute('''SELECT Purchase.total_paid
+                FROM Purchase
+                WHERE Purchase.invoice_no = 10
+                ''')
+for row in c.fetchall():
+    total_paid = (row[0])
+    print(f"${total_money:.2f}\nWith tax:\n${total_paid:.2f}")
 
 
 c.execute('''SELECT DISTINCT Customer.first_name, Customer.last_name, Customer.state
@@ -223,4 +209,3 @@ for row in c.fetchall():
 conn.commit()
 
 conn.close()
-
