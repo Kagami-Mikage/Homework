@@ -61,7 +61,6 @@ def create_tables():
                 )''')
     
     c.execute('''CREATE TABLE Reservation(
-                    reservationid INTEGER PRIMARY KEY AUTOINCREMENT,
                     guestid INTEGER NOT NULL,
                     roomid INTEGER NOT NULL,
                     startdate TEXT NOT NULL,
@@ -133,7 +132,7 @@ def insert_data():
                 ''')
     
     c.execute('''INSERT INTO RoomToAmenity (roomid, amenityid)
-                VALUES (1, 1),
+                VALUES (1, 4),
                 (2, 3),
                 (3, 2),
                 (4, 1)
