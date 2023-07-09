@@ -1,7 +1,7 @@
 # Homework 4 - It Takes A Team
 
 <p><b>Members</b></p>
-<a href="https://github.com/ThurmondGuy"><p>Thurmond Guy</a> - Database Modeler</p>
+<a href="https://github.com/ThurmondGuy"><p>Thurmond Guy</a></p><p> - Database Modeler</p>
 <p>Billy Huynh - Database Developer </p>
 <p>Arnav Kadam - Database Administrator</p>
 <p>Albert Kang - Database Architect</p>
