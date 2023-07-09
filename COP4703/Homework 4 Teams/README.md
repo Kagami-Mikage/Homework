@@ -10,7 +10,7 @@
 <p>Joshua Marquez - Database Tester</p>
 
 <p><b>Other Versions</b></p>
-<a href="https://usfedu-my.sharepoint.com/:p:/g/personal/tandrino_usf_edu/EarQ7FlqVn9Mpropt1UxpIgBlKjtdUmcHh4eJwpqoMGsRA?e=UQ702V"><p>PowerPoint Presentation</p></a>
+<p><a href="https://usfedu-my.sharepoint.com/:p:/g/personal/tandrino_usf_edu/EarQ7FlqVn9Mpropt1UxpIgBlKjtdUmcHh4eJwpqoMGsRA?e=UQ702V">PowerPoint Presentation</p></a>
 
 # Background
 <p align="justify">In this group project each member of the team will play a different, but interconnected, role. The seven 
