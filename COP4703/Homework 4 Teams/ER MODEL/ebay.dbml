@@ -1,0 +1,53 @@
+Table Users {
+  user_id int [pk]
+  name varchar
+  address varchar
+  email varchar
+}
+
+Table Products {
+  product_id int [pk]
+  seller_id int [ref: > Users.user_id]
+  product_name varchar
+  starting_price decimal
+  sale_date date
+  sale_duration int
+}
+
+Table Bids {
+  bid_id int [pk]
+  product_id int [ref: > Products.product_id]
+  bidder_id int [ref: > Users.user_id]
+  bid_amount decimal
+  comments varchar
+}
+
+Table Winners {
+  winner_id int [pk]
+  product_id int [ref: > Products.product_id]
+  bidder_id int [ref: > Users.user_id]
+}
+
+Table Shipments {
+  shipment_id int [pk]
+  product_id int [ref: > Products.product_id]
+  shipping_company varchar
+  shipment_status varchar
+}
+
+Table Payments {
+  payment_id int [pk]
+  winner_id int [ref: > Winners.winner_id]
+  payment_amount decimal
+  payment_date date
+}
+
+Table Transactions {
+  transaction_id int [pk]
+  product_id int [ref: > Products.product_id]
+  seller_id int [ref: > Users.user_id]
+  payment_id int [ref: > Payments.payment_id]
+  eBay_cut decimal
+  seller_amount decimal
+}
+
