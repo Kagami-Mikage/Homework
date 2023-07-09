@@ -15,13 +15,13 @@
 # Background
 <p align="justify">In this group project each member of the team will play a different, but interconnected, role. The seven 
 roles are as follows: <b>Database Administrator, Database Developer, Database Tester, Database Analyst, 
-Database Engineer, Database Architect, Database Modeler.</b> It is the responsibility of the team to assign one role to each member of the team.</p>
+Database Engineer, Database Architect, and Database Modeler.</b> It is the responsibility of the team to assign one role to each member of the team.</p>
 
-<p align="justify">Your team has been assigned a scenario. The scenario description that you have been given does not contain enough information for your team to complete this task. This means that the team is going to have to be responsible for filling in the gaps. The team will perform the follow steps:</p>
+<p align="justify">Your team has been assigned a scenario. The scenario description that you have been given does not contain enough information for your team to complete this task. This means that the team is going to have to be responsible for filling in the gaps. The team will perform the following steps:</p>
 
 <ol type="1">
     <li>
-        <p><b>The Database Administrator</b> will be responsible for describing the database that the team decided to create. This will include listing out the tables that were created, the rows and columns that the tables contain, any indexes that the team decided to create to speed things up and any views that were created.
+        <p><b>The Database Administrator</b> will be responsible for describing the database that the team decided to create. This will include listing out the tables that were created, the rows and columns that the tables contain, any indexes that the team decided to create to speed things up, and any views that were created.
         </p>
     </li>
     <li>
@@ -33,11 +33,11 @@ Database Engineer, Database Architect, Database Modeler.</b> It is the responsib
         </p>
     </li>
     <li>
-        <p><b>The Database Analyst</b> will determine what scheduled procedures, stored functions, and triggers will be required. They will then defined them.
+        <p><b>The Database Analyst</b> will determine what scheduled procedures, stored functions, and triggers will be required. They will then define them.
         </p>
     </li>
     <li>
-        <p><b>The Database Engineer</b> will explain how the team's database was normalized. They will also lay out the various joins that will be required in order to extract required data from the database.
+        <p><b>The Database Engineer</b> will explain how the team's database was normalized. They will also lay out the various joins that will be required in order to extract the required data from the database.
         </p>
     </li>
     <li>
@@ -80,13 +80,13 @@ make sure that the rest of the money is given to the person who sold the product
 <ul>
     <li>First Normal Form (1NF): Attributes of a relation are atomic values and do not contain sets.</li>
     <li>Second Normal Form (2NF): Non-key attributes of a relational must be fully functionally dependent on a key.</li>
-    <li>Third Normal Form (3NF): A functional dependendency FD X → Y of a relation must have X as a candidate key or Y as part of a (possibly different) candidate key.</li>
+    <li>Third Normal Form (3NF): A functional dependency FD X → Y of a relation must have X as a candidate key or Y as part of a (possibly different) candidate key.</li>
     <li>Boyce-Codd Normal Form (BCNF): A functional dependency FD X → Y where X is a key of the relation.</li>
 </ul>
 
 # Database ER Model
 
-# Creating the Relational Database in Orcale and Inserting a Sample Data Set
+# Creating the Relational Database in Oracle and Inserting a Sample Data Set
 
 # Testing the Relational Database 
 
