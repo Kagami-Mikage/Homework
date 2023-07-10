@@ -1,24 +1,25 @@
 Table Users {
   user_id int [pk]
-  name varchar
-  address varchar
-  email varchar
+  first_name varchar [NOT NULL]
+  last_name varchar [NOT NULL]
+  address varchar [NOT NULL]
+  email varchar [NOT NULL]
 }
 
 Table Products {
   product_id int [pk]
   seller_id int [ref: > Users.user_id]
-  product_name varchar
-  starting_price decimal
-  sale_date date
-  sale_duration int
+  product_name varchar [NOT NULL]
+  starting_price decimal [NOT NULL]
+  sale_date date [NOT NULL]
+  sale_end_date date [NOT NULL]
 }
 
 Table Bids {
   bid_id int [pk]
   product_id int [ref: > Products.product_id]
   bidder_id int [ref: > Users.user_id]
-  bid_amount decimal
+  bid_amount decimal [NOT NULL]
   comments varchar
 }
 
@@ -31,15 +32,15 @@ Table Winners {
 Table Shipments {
   shipment_id int [pk]
   product_id int [ref: > Products.product_id]
-  shipping_company varchar
-  shipment_status varchar
+  shipping_company varchar [NOT NULL]
+  shipment_status varchar [NOT NULL]
 }
 
 Table Payments {
   payment_id int [pk]
   winner_id int [ref: > Winners.winner_id]
-  payment_amount decimal
-  payment_date date
+  payment_amount decimal [NOT NULL]
+  payment_date date [NOT NULL]
 }
 
 Table Transactions {
@@ -47,7 +48,7 @@ Table Transactions {
   product_id int [ref: > Products.product_id]
   seller_id int [ref: > Users.user_id]
   payment_id int [ref: > Payments.payment_id]
-  eBay_cut decimal
-  seller_amount decimal
+  eBay_cut decimal [NOT NULL]
+  seller_amount decimal [NOT NULL]
 }
 
