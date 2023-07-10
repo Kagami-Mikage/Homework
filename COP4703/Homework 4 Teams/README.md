@@ -2,11 +2,11 @@
 
 <p><b>Members</b></p>
 <p><a href="https://github.com/ThurmondGuy">Thurmond Guy</a> - Database Modeler</p>
-<p>Billy Huynh - Database Developer </p>
+<p>Billy Huynh - Database Analyst </p>
 <p>Arnav Kadam - Database Administrator</p>
 <p>Albert Kang - Database Architect</p>
 <p>Michael Kelly - Database Engineer</p>
-<p>Parker Kimbleton - Database Analyst</p>
+<p>Parker Kimbleton - Database Developer</p>
 <p>Joshua Marquez - Database Tester</p>
 
 <p><b>Other Versions</b></p>
