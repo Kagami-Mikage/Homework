@@ -87,7 +87,7 @@ make sure that the rest of the money is given to the person who sold the product
 
 
 # Database ER Model
-<img src="">
+<img src="/Homework 4 Teams/ebay.png">
 # Creating the Relational Database in Oracle and Inserting a Sample Data Set
 
 # Testing the Relational Database 
