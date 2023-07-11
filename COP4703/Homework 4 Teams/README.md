@@ -114,12 +114,14 @@ make sure that the rest of the money is given to the person who sold the product
 
 
 # Database ER Model
+
 <img src="https://github.com/ThurmondGuy/Homework/blob/main/COP4703/Homework%204%20Teams/ER%20MODEL/ebay.png">
 
 <p>Created with <a href="https://dbdiagram.io/d">dbdiagram.io</a>. Check <a href="https://github.com/ThurmondGuy/Homework/blob/main/COP4703/Homework%204%20Teams/ER%20MODEL/ebay.dbml">ebay.dbml</a> for the code.</p>
 
 # Creating the Relational Database in Oracle and Inserting a Sample Data Set
-<p>Database tables have been created from the relational schema in Oracle SQL Developer with SQL `CREATE TABLE` and `INSERT` statements. Sample data has been created and inserted into these tables to allow for realistc taesting. The method used to create the tables and sample data is described in this python <a href="https://github.com/ThurmondGuy/Homework/blob/main/COP4703/Homework%204%20Teams/SQL%20code/ebay.py">file</a>.<p>
+
+Database tables have been created from the relational schema in Oracle SQL Developer with SQL `CREATE TABLE` and `INSERT` statements. Sample data has been created and inserted into these tables to allow for realistc taesting. The method used to create the tables and sample data is described in this python <a href="https://github.com/ThurmondGuy/Homework/blob/main/COP4703/Homework%204%20Teams/SQL%20code/ebay.py">file</a>.
 
 <p>Below here are the statements used to create the tables. To see the database file with the sample data, <a href="https://github.com/ThurmondGuy/Homework/blob/main/COP4703/Homework%204%20Teams/SQL%20code/database.db">click here</a>.</p>
 
