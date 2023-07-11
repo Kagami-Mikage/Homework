@@ -51,4 +51,3 @@ Table Transactions {
   eBay_cut decimal [NOT NULL]
   seller_amount decimal [NOT NULL]
 }
-
