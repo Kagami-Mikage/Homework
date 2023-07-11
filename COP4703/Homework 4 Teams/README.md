@@ -2,7 +2,7 @@
 
 <p><b>Members</b></p>
 <p><a href="https://github.com/ThurmondGuy">Thurmond Guy</a> - Database Modeler</p>
-<p>Billy Huynh - Database Analyst </p>
+<p>Billy Huynh - Database Analyst</p>
 <p>Arnav Kadam - Database Administrator</p>
 <p>Albert Kang - Database Architect</p>
 <p>Michael Kelly - Database Engineer</p>
@@ -84,20 +84,18 @@ make sure that the rest of the money is given to the person who sold the product
     <li>Boyce-Codd Normal Form (BCNF): A functional dependency FD X → Y where X is a key of the relation.</li>
 </ul>
 
-# Database ER Model
 
+
+# Database ER Model
+<img src="">
 # Creating the Relational Database in Oracle and Inserting a Sample Data Set
 
 # Testing the Relational Database 
 
 # Procedures, Stored Functions, & Triggers
 
-<p><b>Scheduled Procedures:</n></p>
+<p><b>Scheduled Procedures:</b></p>
+<p>ShowCurrentBidAmount: Display the current bid amount on an item (bid_amount)</p>
 
+<p>ShowWinnerInformation: 
 <p><b>Stored Functions:</b></p>
-
-<p><b>Triggers:</b></p>
-
-
-
-

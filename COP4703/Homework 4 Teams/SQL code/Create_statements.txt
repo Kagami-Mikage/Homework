@@ -1,0 +1,77 @@
+CREATE TABLE Users (
+    user_id int PRIMARY KEY,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    address VARCHAR(80) NOT NULL,
+    email VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE Products (
+   product_id int PRIMARY KEY,
+   seller_id INT,
+   FOREIGN KEY(seller_id)
+         REFERENCES Users(user_id),
+   product_name VARCHAR(50) NOT NULL,
+   starting_price DECIMAL NOT NULL,
+   sale_date DATE NOT NULL,
+   end_date DATE NOT NULL
+);
+
+
+CREATE TABLE Bids(
+  bid_id INT PRIMARY KEY,
+  product_id INT,
+  FOREIGN KEY(product_id)
+        REFERENCES Products(product_id),
+  bidder_id INT,
+ FOREIGN KEY(bidder_id)
+        REFERENCES Users(user_id).
+  bid_amount DECIMAL,
+  comments VARCHAR(100)
+);
+
+CREATE TABLE Winners(
+  winner_id INT PRIMARY KEY,
+  product_id INT,
+  FOREIGN KEY(product_id)
+        REFERENCES Products(product_id),
+  bidder_id INT,
+  FOREIGN KEY(bidder_id)
+        REFERENCES USERS(user_id)
+);
+
+
+CREATE TABLE Shipments(
+shipment_id INT PRIMARY KEY,
+product_id INT,
+FOREIGN KEY(product_id)
+       REFERENCES Products(product_id),
+shipping_company VARCHAR(40),
+shipment_status VARCHAR(20)
+);
+
+
+CREATE TABLE Payments(
+payment_id INT PRIMARY KEY,
+winner_id INT,
+FOREIGN KEY(winner_id)
+      REFERENCES Winners(winner_id),
+payment_amount DECIMAL,
+payment_date DATE
+);
+
+CREATE TABLE Transactions(
+transaction_id INT PRIMARY KEY,
+product_id INT,
+FOREIGN KEY(product_id)
+        REFERENCES products(product_id),
+seller_id INT,
+FOREIGN KEY(seller_id)
+        REFERENCES Users(user_id),
+payment_id INT,
+FOREIGN KEY(payment_id)
+        REFERENCES Payments(payment_id),
+eBay_cut DECIMAL,
+seller_amount DECIMAL
+);
