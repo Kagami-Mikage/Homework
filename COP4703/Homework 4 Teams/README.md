@@ -424,7 +424,7 @@ BEGIN
     product_id, bid_amount, comments)
     VALUES(bid_id_sequence NEXTVAL, p.product_id, 
     p.bidder_id, p.bid_amount, p.comments);
-COMMIT; - Commit the transaction
+COMMIT; 
 ```
 
 <p>Trigger: AfterAuctionCompletion</p>
