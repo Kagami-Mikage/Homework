@@ -1,0 +1,8 @@
+alice
+bill
+bob
+ctf
+joe 
+admin
+administrator
+root
