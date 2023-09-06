@@ -3,9 +3,9 @@
 <h1>CTF 1: Brute Force Password Attacks</h1>
 <b>Tools:</b>
 <ul>
-    <li>Wireshark</li>
-    <li>Hydra</li>
-    <li>DVWA - (Deployed OVA using VMware)
+    <li><a href="https://www.wireshark.org/download.html">Wireshark</a></li>
+    <li><a href="https://github.com/ThurmondGuy/Homework/tree/main/CNT4403/CTF-1%20Brute%20Force%20Password%20Attacks/Hydra">Hydra</a></li>
+    <li><a href="https://www.youtube.com/watch?v=GmWQ1VIjd2U">DVWA</a> - (Deployed OVA using <a href="https://www.vmware.com/products/workstation-player.html">VMware</a>)
 </ul>
 
 <h2>Overview</h2>
