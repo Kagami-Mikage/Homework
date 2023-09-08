@@ -141,10 +141,10 @@ With the Success Message: "Welcome to the password protected area admin".
 <details>
 <summary>3. Which header tag in the HTTP request packet contains the session ID?</summary><b>cookie</b></details>
 <details><summary>4. What is the name of the session ID used by DVWA (just supply the name, not the value)</summary><b>PHPSESSID</b></details>
-<details><summary>5. When using Hydra, to supply a file with a list of usernames, yu would use which switch?</summary><b>-L</b></details>
+<details><summary>5. When using Hydra, to supply a file with a list of usernames, you would use which switch?</summary><b>-L</b></details>
 <details><summary>6. When using Hydra, to supply a file with a list of passwords, you would use which switch?</summary><b>-P</b></details>
 <details><summary>7. When using Hydra, which protocol module is used in this exercise?</summary><b>http-get-form</b></details>
-<details><summary>8. When using Hydra and specifying an HTTP "GET" request, what toke is used to specify the username?</summary><b>^USER^</b></details>
+<details><summary>8. When using Hydra and specifying an HTTP "GET" request, what token is used to specify the username?</summary><b>^USER^</b></details>
 <details><summary>9. When using Hydra and specifying an HTTP "GET" request, what token is used to specify the password?</summary><b>^PASS^</b></details>
 <details><summary>10. When using Hydra and specifying an HTTP "GET" request, what switch is used to specify optional HTTP header tags?</summary><b>:H=</b></details>
 <details><summary>11. The username for the password cracking attempt using Hydra is?</summary><b>admin</b></details>
