@@ -19,3 +19,36 @@ system using the VMware console, as demonstrated below:</p>
 
 ![image8](https://github.com/ThurmondGuy/Homework/blob/main/CNT4403/CTF-1%20Brute%20Force%20Password%20Attacks/images/image8.png)
 
+<p>To log into the system, use the username of “<b>ctf</b>” and password of 
+“<b>ctf</b>”. This will present you with the login prompt of “ctf@usf-ctf-server:” (note the image above does not reflect the server’s name, but
+the default name). It is from here that you can issue the “ifconfig” 
+command. Note that the ctf account is a non-privileged account, so you 
+will need to use “sudo” to invoke any system commands.</p>
+
+<p>What we want is "ens33 inet addr". This is our "target server". So our target server here is <b>192.168.131.128</b>.</p>
+
+<h2>Wireshark</h2>
+<p>Use Wireshark and watch the traffic that is generated on the 
+network, you can then filter out unwanted traffic to only give you the 
+information you will need to exploit the system. To perform this 
+exercise, start your Wireshark tracing for all traffic on the VMnet1 or 
+VMnet8 network, or whatever network interface your IP address for 
+your DVWA server IP address network is assigned to.</p>
+
+![image4](https://github.com/ThurmondGuy/Homework/blob/main/CNT4403/CTF-1%20Brute%20Force%20Password%20Attacks/images/image4.png)
+
+<p>We are going to need information for our Hydra attack later on:</p>
+<ul>
+    <li>target server</li>
+    <li>cookie</li>
+    <li>failure message</li>
+</ul>
+
+<p>Analyze the "GET" packet to find the <b>cookie</b>.</p>
+
+![image9](https://github.com/ThurmondGuy/Homework/blob/main/CNT4403/CTF-1%20Brute%20Force%20Password%20Attacks/images/image9.png)
+
+```
+Cookie: security=low;
+PHPSESSID=n232a3gba8kkd47tai36be0o81
+```
