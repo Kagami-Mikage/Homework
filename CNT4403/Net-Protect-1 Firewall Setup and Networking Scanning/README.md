@@ -24,3 +24,85 @@
 <p align="center">
 <img src="https://github.com/ThurmondGuy/Homework/blob/main/CNT4403/Net-Protect-1%20Firewall%20Setup%20and%20Networking%20Scanning/Diagram.png">
 </p>
+
+<p>Notice that the Host Computer has access to both the virtual network (this is selected by you, in the diagram it is VMnet2, but on your system it may be VMnet1 if you don't create a special adapter with the VMware DHCP service disabled, as was performed in VMnet2. The LAN interface can be identified as the "Host-Only" network.). The OPNsense Web base User Interface can only be accessed from the private/internal/LAN network, in the example above, it is located at IP address 192.168.111.100. Both the Host computer and the DSL server can connect and use the OPNsense web-based interface located at this address. The Web UI is NOT accessible from the public (WAN) network.</p>
+
+<p>The assignment is broken up into two phase, Firewall setup and nmap scanning.</p>
+
+<h2>Phase 1</h2>
+
+<p>The following is a list of steps to follow to complete the first phase of the assignment:</p>
+<p>Read the instructions from the <a href="https://usflearn.instructure.com/courses/1830104/files/155014830?wrap=1">lab document,</a> chapter "Introduction o Firewalls"</p>
+<ul>
+    <li>Start at "Overview"</li>
+    <li>End at the beginning of "Firewall Rules Basics</li>
+</ul>
+<p>Setup the Firewall Image using VMware Workstation Pro or Fusion</p>
+<ul>
+    <li><a href="https://usflearn.instructure.com/courses/1830104/files/155015082?wrap=1">Open OPNsense Firewall</a></li>
+    <li>Configure the network adapters required</li>
+    <li>Configure the private LAN for Network Only</li>
+        <ul>
+            <li>NOTE: There is no security configuration required yet</li>
+            <li>Firewall contains much of the network functionality</li>
+                <ul>
+                    <li>DHCP Client/Server</li>
+                    <li>NAT</li>
+                </ul>
+            <li>Configure the WAN - em0 (to ISP using Bridge mode or VMware NAT)</li>
+            <li>Configure the LAN - le0</li>
+                <ul>
+                    <li>This is a Host-Only VMware virtual network</li>
+                    <li>This is em1 for OPNsense version 21</li>
+                    <li>If you use VMnet1, disable the VMware DHCP service</li>
+                    <li>You can create a net interface, VMnet2 with the DHCP service disabled</li>
+                        <ul>
+                            <li>This allows you to run the DVWA CTF exercises on VMnet1 and Firewall exercises on VMnet2</li>
+                        </ul>
+                </ul>
+            <li>Configure DHCP (for virtual network) as describe in the presentation</li>
+        </ul>
+    <li>OPNsense Network Setup</li>
+        <ul>
+            <li>This will be the hardest part of the exercise</li>
+            <li>Configure the WAN - Generally performed automatically using ISP or VMware DHCP service, example:192.168.136.100/24</li>
+            <li>Configure the LAN – Performed statically in OPNsense firewall console setup, example: 192.168.111.100/24</li>
+            <li>Follow the Lab Documentation to determine how to complete the following operations</li>
+                <ul>
+                    <li>Boot OPNsense</li>
+                        <ul>
+                            <li>Go to the Vmware console for OPNsense</li>
+                                <ul>
+                                    <li>Select 1 and configure the Interfaces</li>
+                                    <li>Select 2 and configure the IP addresses for each interface</li>
+                                        <ul>
+                                            <li>The internal interface (LAN/Private) must be a static address</li>
+                                            <li>The address must be in the same subnet as the Virtual Adapter you are using, for example VMnet1 or VMnet2</li>
+                                            <li>Use ipconfig to find the Host address for this and use that subnet to configure the static LAN address of the firewall</li>
+                                        </ul>
+                                    <li>Ping the router</li>
+                                </ul>
+                        </ul>
+                </ul>
+        </ul>
+</ul>
+
+<h2>Phase 2</h2>
+<p>In the second phase of the assignment, we will perform network scanning on three individual systems, the “host” computer, the OPNsense Firewall and the DSL Linux server. This will introduce us to the type of information we may obtain from these scans and teach us a valuable lesson on how information may “leak” from simple nmap scans. To implement the second portion of the assignment:</p>
+<ul>
+    <li>Make sure the Firewall LAN/Private interface is configured for DHCP</li>
+    <li>Startup VMware Workstation Pro or Fusion – DSL (Created in Module 1)</li>
+        <ul>
+            <li>This requires OPNsense-Firewall for DHCP address</li>
+            <li>Make sure OPNsense is running first</li>
+        </ul>
+    <li><a href="https://nmap.org/">Download http://nmap.org for Windows</a></li>
+    <li>Install nmap on your Windows Host system</li>
+        <ul>
+            <li>Windows Host (where you are running NMAP from, if you scan 127.0.0.1 it will result in a scan of this local host)</li>
+            <li>The DSL Server (from Module 1)</li>
+            <li>The OPNsense Firewall (WAN/LAN) Interfaces</li>
+        </ul>
+</ul>
+
+<p>Once you have completed the operations in the assignment, take the quiz, which will test our knowledge on the operations that you have performed.</p>
