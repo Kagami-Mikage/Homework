@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link id="csslink" rel="stylesheet" href="main.css">
+    <script>
+	    function toggleCSS() {
+          var currentCSS = document.getElementById('csslink');
+          if (currentCSS.getAttribute('href') == 'main.css') {
+            currentCSS.setAttribute('href', 'alternate.css');
+          } else {
+            currentCSS.setAttribute('href', 'main.css');
+          }
+      }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <main id="about">
+            <div id="inner">
+                <image class="frame" src="images/kiki.gif"></image>
+                <header class="pagetitle">
+                    <h5><strong>About</strong></h5>
+                </header>
+                <article class="content">
+                    <p><strong>Studio Ghibli</strong> is a renowned Japanese animation studio with a rich history in the animation industry. Founded on June 15, 1985, by visionary directors Hayao Miyazaki and Isao Takahata, the studio has left an incredible mark on the world of animation. Their body of work is a testament to creativity and innovation, captivating audiences worldwide.</p>
+                    <p>Three of the studio's films are among the <strong>ten highest-grossing anime feature films</strong> made in Japan.</p>
+                    <div class="list">
+                        <h3>Top 10 highest-grossing anime films:</h3>
+                        <ol>
+                            <li><i>Demon Slayer the Movie: Mugen Train</i> - $507.1 million</li>
+                            <li><strong><i>Spirited Away</i></strong> - $395.6 million</li>
+                            <li><i>Your Name</i> - $380.2 million</li>
+                            <li><i>Suzume</i> - $322.5 million</li>
+                            <li><i>The First Slam Dunk</i> - $258.6 million</li>
+                            <li><i>One Piece Film: Red</i> - $246.6 million</li>
+                            <li><strong><i>Howl's Moving Castle</i></strong> - $237.5 milliom</li>
+                            <li><strong><i>Ponyo</i></strong> - $204.8 million</li>
+                            <li><i>Jujustu Kaisen 0</i> - $196.3 million</li>
+                            <li><i>Weathering With You</i> - $193 million</li>
+                        </ol>
+                    </div>
+                </article>
+                <div class="bottom_info">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="gifs.html">Gifs</a></li>
+                        </ul>
+                    </nav>
+                    <hr>
+                    <button onclick="toggleCSS()">Switch Style</button>
+                    <footer>
+                        <p>© 2023 Kagami • Kari</p>
+                    </footer>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

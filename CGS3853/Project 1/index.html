@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ghibli</title>
+    <link id="csslink" rel="stylesheet" href="main.css">
+    <script>
+	    function toggleCSS() {
+          var currentCSS = document.getElementById('csslink');
+          if (currentCSS.getAttribute('href') == 'main.css') {
+            currentCSS.setAttribute('href', 'alternate.css');
+          } else {
+            currentCSS.setAttribute('href', 'main.css');
+          }
+      }
+  </script>
+</head>
+<body>
+    <div id="wrapper">
+        <main>
+            <div id="inner">
+                <image class="frame" src="images/howl.gif"></image>
+                <header>
+                    <h2><strong>studio ghibli</strong></h2>
+                </header>
+                <article>
+                    <p><a href="https://en.wikipedia.org/wiki/Hayao_Miyazaki#:~:text=Hayao%20Miyazaki%20(%E5%AE%AE%E5%B4%8E%20%E9%A7%BF%20or,%2C%20filmmaker%2C%20and%20manga%20artist." target="_blank">Hayao Miyazaki • 宮崎 駿</a></p>
+                    <p><a href="https://open.spotify.com/playlist/37i9dQZF1DX7GTqMQDhOum" target="_blank">Spotify Playlist</a></p>
+                </article>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="movies.html">Movies</a></li>
+                        <li><a href="gifs.html">Gifs</a></li>
+                    </ul>
+                </nav>
+                <hr>
+                <button onclick="toggleCSS()">Switch Style</button>
+                <footer>
+                    <p>© 2023 Kagami • Kari</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

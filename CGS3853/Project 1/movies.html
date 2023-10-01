@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link id="csslink" rel="stylesheet" href="main.css">
+    <script>
+	    function toggleCSS() {
+          var currentCSS = document.getElementById('csslink');
+          if (currentCSS.getAttribute('href') == 'main.css') {
+            currentCSS.setAttribute('href', 'alternate.css');
+          } else {
+            currentCSS.setAttribute('href', 'main.css');
+          }
+      }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <main id="movies">
+            <div id="inner">
+                <image class="frame" src="images/spirited.gif"></image>
+                <header class="pagetitle">
+                    <h5><strong>Movies</strong></h5>
+                </header>
+                <article class="content">
+                    <p>Studio Ghibli has produced many films over the years, and each one is a masterpiece in its own right. Here are some of the most popular ones:</p>
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th>Movie Name</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Spirited Away (2001)</td>
+                                <td>A young girl, Chihiro, becomes trapped in a mysterious and magical world. She must use her courage and wits to save her parents and escape.</td>
+                            </tr>
+                            <tr>
+                                <td>My Neighbor Totoro (1988)</td>
+                                <td>Two sisters move to the countryside and encounter the benevolent forest spirit Totoro in this heartwarming classic.</td>
+                            </tr>
+                            <tr>
+                                <td>Princess Mononoke (1997)</td>
+                                <td>Ashitaka, a prince of the disappearing Emishi people, embarks on a journey to find the cure for a curse from a boar-like monster.</td>
+                            </tr>
+                            <tr>
+                                <td>Howl's Moving Castle (2004)</td>
+                                <td>When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.</td>
+                            </tr>
+                            <!-- Could add more Ghibli movies tbh, small sample size -->
+                        </table>
+                    </div>
+                </article>
+                <div class="bottom_info">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="gifs.html">Gifs</a></li>
+                        </ul>
+                    </nav>
+                    <hr>
+                    <button onclick="toggleCSS()">Switch Style</button>
+                    <footer>
+                        <p>© 2023 Kagami • Kari</p>
+                    </footer>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

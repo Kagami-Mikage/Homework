@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link id="csslink" rel="stylesheet" href="main.css">
+    <script>
+	    function toggleCSS() {
+          var currentCSS = document.getElementById('csslink');
+          if (currentCSS.getAttribute('href') == 'main.css') {
+            currentCSS.setAttribute('href', 'alternate.css');
+          } else {
+            currentCSS.setAttribute('href', 'main.css');
+          }
+      }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <main id="gifs">
+            <div id="inner">
+                <header class="pagetitle">
+                    <h5><strong>Gifs</strong></h5>
+                </header>
+                <article class="content">
+                    <img src="images/totaro.gif">
+                    <h6>My Neighbor Totaro</h6>
+                    <img src="images/porco.gif">
+                    <h6>Porco Rosso</h6>
+                    <img src="images/ponyo.gif">
+                    <h6>Ponyo</h6>
+                    <img src="images/princess.gif">
+                    <h6>Princess Mononoke</h6>
+                    <img src="images/castle.gif">
+                    <h6>Howl's Moving Castle</h6>
+                </article>
+                <div class="bottom_info">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="movies.html">Movies</a></li>
+                            <li><a href="gifs.html">Gifs</a></li>
+                        </ul>
+                    </nav>
+                    <hr>
+                    <button onclick="toggleCSS()">Switch Style</button>
+                    <footer>
+                        <p>© 2023 Kagami • Kari</p>
+                    </footer>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
