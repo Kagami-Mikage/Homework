@@ -16,6 +16,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    animation: fade-up .75s ease-in-out;
 }
 
 main{
@@ -35,7 +36,10 @@ main{
 
 #about, #movies, #gifs{
    max-height: 100%;
+   margin-top: 25px;
+   margin-bottom: 25px;
 }
+
 
 #inner{
     padding: 10px;
@@ -69,7 +73,9 @@ header > h2, header > h5{
 }
 
 article.content{
-    overflow: auto;
+    overflow: none;
+    animation: fade-up 1.25s ease-in-out;
+
 }
 
 article.content > p{
@@ -87,6 +93,7 @@ h3{
     text-align: left;
     color: #4F5C63;
 }
+
 ol{
     padding-left: 25px;
     margin-top: 5px;
@@ -106,6 +113,7 @@ h6{
     margin-bottom: 5px;
 }
 
+/* Movies Page */
 .table{
     text-align: left;
 }
@@ -113,6 +121,40 @@ h6{
 th, td{
     padding-right: 10px;
     padding-bottom: 5px;
+}
+
+/* Gifs Page */
+.img_wrap{
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.img_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.img_description{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    visibility: hidden;
+    opacity: 1;
+    border-radius: 10px;
+    transition: opacity .2s, visibility .2s;
+    font-size: 1.25em;
+    padding: 25%;
+}
+
+
+.img_wrap:hover .img_description{
+    visibility: visible;
+    opacity: 1;
 }
 
 nav > ul{
@@ -152,9 +194,36 @@ hr{
     margin: 0;
 }
 
+button{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    border: none;
+    color:#4F5C63;
+    background: linear-gradient(0deg, #4F5C63, #4F5C63) no-repeat right bottom / 0 var(--bg-h);
+    transition: background-size 350ms;
+    --bg-h: 100%;
+}
+
+
+button:where(:hover, :focus-visible) {
+    background-size: 100% var(--bg-h);
+    background-position-x: left;
+    color: white;
+}
+
 footer > p{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
     margin: 0;
 }
 
+/* animations */
+@keyframes fade-up{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

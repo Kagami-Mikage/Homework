@@ -1,5 +1,284 @@
-.frame{
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12pt;
+    background-color: #2a324b;
+    height: 100%;
+    margin: 0;
+    width: 100vw;
+    overflow: auto;
+    overscroll-behavior: none;
+    overflow-x: hidden;
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fade-down .75s ease-in-out;
+}
+
+main{
+    text-align: center;
+    background-color: #1b2a41;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
     width: 100%;
+    max-height: 520px;
+    min-height: 403px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+#about, #movies, #gifs{
+   max-height: 100%;
+}
+
+#inner{
+    padding: 10px;
+    padding-top: 0;
+    padding-left: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.frame{
     height: 80%;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#about_img{
+    margin-bottom: 0;
+}
+
+/* mav bar */ 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #767b91;
+    color: #eef4ed;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+/* content */
+header{
+    text-align: center;
+}
+
+header h2{
+    margin: 0;
+}
+
+header h5{
+    margin: 0;
+    font-size: 1.25em;
+}
+
+article.content{
+    animation: fade-down 1.25s ease-in-out;
+}
+
+article.content > p{
+    margin: 5px 0;
+    text-align: left;
+    color: #eef4ed;
+    padding: 0px;
+}
+
+/* Table page */
+#movies_content{
+    text-align: center;
+}
+
+h3{
+    margin-bottom: 0;
+}
+
+.list{
+    text-align: left;
+    color: #eef4ed;
+}
+
+ol{
+    padding: auto;
+    margin-top: 5px;
+}
+
+.content{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+table{
+    margin: auto;
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #eef4ed;
+}
+
+th, td{
+    border: 1px solid white;
+    padding: 5px;
+    color: #eef4ed;
+}
+
+#movies, #gifs{
+    max-height: 100%;
+    margin-top: 75px;
+    margin-bottom: 25px;
+ }
+
+ #about{
+    margin-bottom: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+ }
+ 
+/* Gifs page */
+.img_wrap{
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.img_img{
+    border-radius: 10px;
+}
+
+.img_description{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    visibility: hidden;
+    opacity: 1;
+    border-radius: 10px;
+    transition: opacity .2s, visibility .2s;
+    font-size: 1.25em;
+    padding: 10%;
+}
+
+
+.img_wrap:hover .img_description{
+    visibility: visible;
+    opacity: 1;
+}
+
+footer{
+    color: #eef4ed;
+}
+
+/* alt images */
+img[src="images/howl.gif"]{
+    content: url('alt_images/alternate-kiki.gif');
+}
+
+img[src="images/kiki.gif"]{
+    content: url('alt_images/cat.gif');
+}
+
+img[src="images/spirited.gif"]{
+    content: url('alt_images/dustmite.gif');
+}
+
+img[src="images/totoro.gif"]{
+    content: url('alt_images/alt-totoro.gif');
+}
+
+img[src="images/porco.gif"]{
+    content: url('alt_images/alt-porco.gif');
+}
+
+img[src="images/ponyo.gif"]{
+    content: url('alt_images/alt-ponyo.gif');
+}
+
+img[src="images/princess.gif"]{
+    content: url('alt_images/alt-princess.gif');
+}
+
+img[src="images/castle.gif"]{
+    content: url('alt_images/alt-castle.gif');
+}
+
+/* visited links */
+header{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: #e1e5ee;
+    background: linear-gradient(0deg, #a5a8aa, #abb2b6) no-repeat right bottom / 0 var(--bg-h);
+    --bg-h: 100%;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+a:visited{
+    color: #f7c59f;
+}
+
+a:hover{
+    color: white;
+}
+
+a:where(:hover, :focus-visible) {
+    background-size: 100% var(--bg-h);
+    background-position-x: left;
+    color: rgb(255, 255, 255);
+}
+
+
+/* animations */
+@keyframes fade-down{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+button{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    border: none;
+    color:white;
+    background: linear-gradient(0deg, #f7c59f, #f7c59f) no-repeat right bottom / 0 var(--bg-h);
+    transition: background-size 350ms;
+    --bg-h: 100%;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+button:where(:hover, :focus-visible) {
+    background-size: 100% var(--bg-h);
+    background-position-x: left;
+    color: #1b2a41
 }

@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link id="csslink" rel="stylesheet" href="main.css">
+    <link id="csslink" rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="alt_images/cat.gif" type="image/gif">
     <script>
 	    function toggleCSS() {
-          var currentCSS = document.getElementById('csslink');
-          if (currentCSS.getAttribute('href') == 'main.css') {
-            currentCSS.setAttribute('href', 'alternate.css');
-          } else {
-            currentCSS.setAttribute('href', 'main.css');
-          }
-      }
+        var currentCSS = document.getElementById('csslink');
+            if (currentCSS.getAttribute('href') === 'main.css') {
+                currentCSS.setAttribute('href', 'alternate.css');
+                localStorage.setItem('cssPreference', 'alternate.css');
+            } else {
+                currentCSS.setAttribute('href', 'main.css');
+                localStorage.setItem('cssPreference', 'main.css');
+            }
+        }
+
+        window.onload = function() {
+        var preferredCSS = localStorage.getItem('cssPreference');
+            if (preferredCSS) {
+                var currentCSS = document.getElementById('csslink');
+                currentCSS.setAttribute('href', preferredCSS);
+            }
+        };
     </script>
 </head>
 <body>
@@ -24,16 +35,26 @@
                     <h5><strong>Gifs</strong></h5>
                 </header>
                 <article class="content">
-                    <img src="images/totaro.gif">
-                    <h6>My Neighbor Totaro</h6>
-                    <img src="images/porco.gif">
-                    <h6>Porco Rosso</h6>
-                    <img src="images/ponyo.gif">
-                    <h6>Ponyo</h6>
-                    <img src="images/princess.gif">
-                    <h6>Princess Mononoke</h6>
-                    <img src="images/castle.gif">
-                    <h6>Howl's Moving Castle</h6>
+                    <div class="img_wrap">
+                        <img class="img_img" src="images/totoro.gif">
+                        <h6 class="img_description">My Neighbor Totoro</h6>
+                    </div>
+                    <div class="img_wrap">
+                        <img class="img_img" src="images/porco.gif">
+                        <h6 class="img_description">Porco Rosso</h6>
+                    </div>
+                    <div class="img_wrap">
+                        <img class="img_img" src="images/ponyo.gif">
+                        <h6 class="img_description">Ponyo</h6>
+                    </div>
+                    <div class="img_wrap">
+                        <img class="img_img" src="images/princess.gif">
+                        <h6 class="img_description">Princess Mononoke</h6>
+                    </div>
+                    <div class="img_wrap">
+                        <img class="img_img" src="images/castle.gif">
+                        <h6 class="img_description">Howl's Moving Castle</h6>
+                    </div>
                 </article>
                 <div class="bottom_info">
                     <nav>
@@ -47,7 +68,7 @@
                     <hr>
                     <button onclick="toggleCSS()">Switch Style</button>
                     <footer>
-                        <p>© 2023 Kagami • Kari</p>
+                        <p>© 2023 Kagami • Kari • Kennedy</p>
                     </footer>
                 </div>
             </div>

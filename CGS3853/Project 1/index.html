@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Ghibli</title>
     <link id="csslink" rel="stylesheet" href="main.css">
+    <link rel="icon" href="alt_images/cat.gif" type="image/gif">
     <script>
-	    function toggleCSS() {
-          var currentCSS = document.getElementById('csslink');
-          if (currentCSS.getAttribute('href') == 'main.css') {
-            currentCSS.setAttribute('href', 'alternate.css');
-          } else {
-            currentCSS.setAttribute('href', 'main.css');
-          }
-      }
+        function toggleCSS() {
+        var currentCSS = document.getElementById('csslink');
+            if (currentCSS.getAttribute('href') === 'main.css') {
+                currentCSS.setAttribute('href', 'alternate.css');
+                localStorage.setItem('cssPreference', 'alternate.css');
+            } else {
+                currentCSS.setAttribute('href', 'main.css');
+                localStorage.setItem('cssPreference', 'main.css');
+            }
+        }
+
+        window.onload = function() {
+        var preferredCSS = localStorage.getItem('cssPreference');
+            if (preferredCSS) {
+                var currentCSS = document.getElementById('csslink');
+                currentCSS.setAttribute('href', preferredCSS);
+            }
+        };
   </script>
 </head>
 <body>
@@ -36,11 +47,13 @@
                         <li><a href="gifs.html">Gifs</a></li>
                     </ul>
                 </nav>
-                <hr>
-                <button onclick="toggleCSS()">Switch Style</button>
-                <footer>
-                    <p>© 2023 Kagami • Kari</p>
-                </footer>
+                <div class="bottom_info">
+                    <hr>
+                    <button onclick="toggleCSS()">Switch Style</button>
+                    <footer>
+                        <p>© 2023 Kagami • Kari • Kennedy</p>
+                    </footer>
+                </div>
             </div>
         </main>
     </div>
